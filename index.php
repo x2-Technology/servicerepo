@@ -59,7 +59,7 @@ try
 
 #highlight_string(var_export($_COOKIE, true));
 
-$repo = new Repository(Repository::$REPO_SESSION);
+$repo = new Repository(Repository::REPO_SESSION);
 
 #write($repo);
 
@@ -72,10 +72,10 @@ function write($repo){
                 ->add("user", "Hasan", array("name"=>"Hasan", "dogum"=>"13.05.1980", "vize"=>"01.01.2012", "language"=>array("english"=>"goog", "german"=>"Perfekt")))
                 ->add("role", array("name"=>"Player", "start"=>"13.05.1980", "until"=>"01.01.2012"))
                 ->add("school","Oxford" )
-                ->add("school","Istanbul" )
+                // ->add("school","Istanbul" )
                 ->add("user", "Osman", array("name"=>"Osman", "dogum"=>"13.05.1980", "vize"=>"01.01.2012", "language"=>array("english"=>"goog", "german"=>"Perfekt")))
                 ->add("user", "Süleyman", array("name"=>"Süleyman", "dogum"=>"13.05.1980", "vize"=>"01.01.2012", "language"=>array("english"=>"goog", "german"=>"Perfekt")))
-                ->write();
+                ->commit();
 
 }
 
@@ -92,7 +92,7 @@ function write($repo){
 #$repo->getInstance()->killAll();
 // Array Mode
 #$repo->getInstance()->kill("role");
-$repo->getInstance()->kill("role");
+#$repo->getInstance()->kill("role");
 #$repo->getInstance()->kill("user", "Maho");
 #$repo->getInstance()->killAll();
 
@@ -108,7 +108,7 @@ $repo->getInstance()->setFetchMethod(CRepository::FETCH_TYPE_OBJECT);
 #highlight_string(var_export($_COOKIE["user"], true));
 
 
-echo $repo->getInstance()->readAll()->user->Hasan->dogum;
+echo $repo->getInstance()->readAll()->school;
 #echo $repo->getInstance()->read("user", "musti")->name;
 
 
@@ -120,4 +120,4 @@ setcookie('role','123', time() + 3600, '/');
 
 
 */
-highlight_string(var_export($_SESSION, true));
+#highlight_string(var_export($_SESSION, true));

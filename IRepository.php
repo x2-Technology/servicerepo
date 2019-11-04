@@ -10,7 +10,7 @@ interface IRepository
 {
         public static function getInstance();
         public function add( $k, $sk, $v = NULL );
-        public function write();
+        public function commit();
         public function read($k, $sk = NULL);
         public function readAll();
         public function kill($k, $sk = NULL);

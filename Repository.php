@@ -8,15 +8,16 @@
 
 final class Repository
 {
-        static public $REPO_SESSION     = 0;
-        static public $REPO_COOKIE      = 1;
+        const REPO_SESSION     = 0;
+        const REPO_COOKIE      = 1;
+
         private $repoType               = null;
         private $instance               = null;
 
         function __construct( $repoType = null ) {
 
                 if( is_null($repoType) ){
-                        $repoType = self::$REPO_SESSION;
+                        $repoType = self::REPO_SESSION;
                 }
 
                 $this->repoType = $repoType;
@@ -26,11 +27,11 @@ final class Repository
 
                 switch ( $this->repoType ){
 
-                        case self::$REPO_COOKIE:
+                        case self::REPO_COOKIE:
                                 $this->instance =  CRepository::getInstance();
                                 break;
 
-                        case self::$REPO_SESSION:
+                        case self::REPO_SESSION:
                         default:
                                 $this->instance =  SRepository::getInstance();
 

@@ -11,8 +11,6 @@ class SRepository extends ARepository implements IRepository
 {
         protected function __construct()
         {
-
-
                 // Call only one time
                 if (session_status() !== PHP_SESSION_ACTIVE) {
                         session_start();
@@ -206,4 +204,5 @@ class SRepository extends ARepository implements IRepository
         {
                 return session_id();
         }
+        
 }

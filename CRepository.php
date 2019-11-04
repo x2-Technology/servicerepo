@@ -205,6 +205,4 @@ class CRepository extends ARepository implements IRepository
         {
                 // TODO: Implement getId() method.
         }
-
-
 }
