@@ -35,8 +35,6 @@ class CRepository extends ARepository implements IRepository
 
                 if( is_null($v) )
                 {
-
-
                         switch ( gettype($sk)){
 
 
@@ -55,10 +53,6 @@ class CRepository extends ARepository implements IRepository
                                         break;
 
                         }
-
-                        // $this->repoVal = $sk;
-
-
                 }
 
                 else {
@@ -98,7 +92,7 @@ class CRepository extends ARepository implements IRepository
 
         }
 
-        public function write()
+        public function commit()
         {
                 if( count($this->tempRepo) ){
 
@@ -174,7 +168,8 @@ class CRepository extends ARepository implements IRepository
                 if( !is_null($sk) )
                 {
                         unset($cookie[$sk]);
-                        $this->add( $k, $cookie )->write();
+                        $this->add( $k, $cookie )->add();
+                        $this->commit();
 
                 }
 
