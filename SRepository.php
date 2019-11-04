@@ -41,18 +41,6 @@ class SRepository extends ARepository implements IRepository
 
         function commit()
         {
-
-                /*
-                if (is_null($v)) {
-                        $v = $sk;
-                        $_SESSION[$k] = $v;
-                } else {
-                        $_SESSION[$k][$sk] = $v;
-                }
-
-                return true;
-                */
-
                 if( count($this->tempRepo) ){
 
                         foreach ($this->tempRepo as $index => $item)
@@ -89,10 +77,6 @@ class SRepository extends ARepository implements IRepository
                                         break;
 
                         }
-
-                        // $this->repoVal = $sk;
-
-
                 }
 
                 else {
@@ -161,23 +145,6 @@ class SRepository extends ARepository implements IRepository
                 }
 
                 return null;
-
-                /*if (is_null($sk)) {
-
-                        if ($this->getFetchMethod() === self::FETCH_TYPE_OBJECT) {
-                                return (object)$_SESSION[$k];
-                        }
-
-                        return $_SESSION[$k];
-                }
-
-                if ($this->getFetchMethod() === self::FETCH_TYPE_OBJECT) {
-
-                        return (object)$_SESSION[$k][$sk];
-                }
-
-                return $_SESSION[$k][$sk];*/
-
 
         }
 
