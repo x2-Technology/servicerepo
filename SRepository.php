@@ -39,7 +39,7 @@ class SRepository extends ARepository implements IRepository
                 return "Session Repository Session is active:" . session_status();
         }
 
-        function write()
+        function commit()
         {
 
                 /*
@@ -207,7 +207,8 @@ class SRepository extends ARepository implements IRepository
                 if( !is_null($sk) )
                 {
                         unset($repo[$sk]);
-                        $this->add( $k, $repo )->write();
+                        $this->add( $k, $repo )->add();
+                        $this->commit();
 
                 }
 
